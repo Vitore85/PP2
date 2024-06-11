@@ -10,7 +10,23 @@
     <header>
         <h1>Tic Tac Toe</h1>
     </header>
-
+    <main>
+        <div class="game-board" role="grid" aria-label="Tic Tac Toe Board">
+            <div class="cell" id="cell-1" role="gridcell" tabindex="0"></div>
+            <div class="cell" id="cell-2" role="gridcell" tabindex="0"></div>
+            <div class="cell" id="cell-3" role="gridcell" tabindex="0"></div>
+            <div class="cell" id="cell-4" role="gridcell" tabindex="0"></div>
+            <div class="cell" id="cell-5" role="gridcell" tabindex="0"></div>
+            <div class="cell" id="cell-6" role="gridcell" tabindex="0"></div>
+            <div class="cell" id="cell-7" role="gridcell" tabindex="0"></div>
+            <div class="cell" id="cell-8" role="gridcell" tabindex="0"></div>
+            <div class="cell" id="cell-9" role="gridcell" tabindex="0"></div>
+        </div>
+        <div class="status" aria-live="polite">
+            Current Player: <span id="current-player">X</span>
+        </div>
+        <button id="reset-button">Reset Game</button>
+    </main>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
