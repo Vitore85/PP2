@@ -37,3 +37,13 @@ function checkWin(player) {
 function isDraw() {
     return Array.from(cells).every(cell => cell.textContent !== '');
 }
+// Function to reset the game
+function resetGame() {
+    cells.forEach(cell => {
+        cell.textContent = '';
+    });
+    currentPlayer = 'X';
+    currentPlayerElement.textContent = currentPlayer;
+}
+
+resetButton.addEventListener('click', resetGame);
