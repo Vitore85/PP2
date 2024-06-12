@@ -6,16 +6,45 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-color: #f5f5f5;
-    color: #333;
+    background: url('/assets/images/background.png.png') no-repeat center bottom;
+    background-size: cover;
+    color: #fb7f3f;
+    padding: 10px;
 }
 
 header {
     margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#bg-layer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: #0000007a;
+    z-index: -1;
 }
 
 h1 {
     margin: 0;
+    font-size: 3em;
+}
+
+.player-inputs {
+    margin-bottom: 20px;
+    font-weight: bolder
+}
+
+.player-inputs label,
+.player-inputs input {
+    margin-right: 10px;
+}
+
+.player-inputs button {
+    padding: 5px 10px;
 }
 
 .game-board {
@@ -31,19 +60,88 @@ h1 {
     justify-content: center;
     width: 100px;
     height: 100px;
-    border: 2px solid #000;
+    border: 4px solid #000000d1;
     font-size: 2rem;
     cursor: pointer;
-    background-color: #fff;
+    background-color: #ffffffd8;
 }
 
 .status {
     margin: 20px 0;
     font-size: 1.2rem;
+    font-weight: bolder
+}
+
+.scoreboard {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    font-weight: bolder
 }
 
 #reset-button {
     padding: 10px 20px;
     font-size: 1rem;
     cursor: pointer;
+    background-color: #99b09acd;
+    
+}
+
+#start-game {
+    background-color: #99b09acd;
+}
+
+.rounds-history {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.rounds-history ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.rounds-history li {
+    margin-bottom: 5px;
+}
+
+#cell-1, #cell-3, #cell-5, #cell-7, #cell-9 {
+    background-color: #99b09ad8;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 0;
+    }
+    
+    .game-board {
+        grid-template-columns: repeat(3, 60px);
+        grid-template-rows: repeat(3, 60px);
+    }
+
+    .cell {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .status, .scoreboard, .rounds-history {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .player-inputs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .player-inputs label,
+    .player-inputs input {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .player-inputs button {
+        padding: 5px 10px;
+    }
 }
