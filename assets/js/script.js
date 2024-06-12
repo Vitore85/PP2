@@ -8,13 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const startButton = document.getElementById('start-game');
     const playerXInput = document.getElementById('player-x');
     const playerOInput = document.getElementById('player-o');
-    const roundsList = document.getElementById('rounds-list'); 
+    const roundsList = document.getElementById('rounds-list');
+    const timerElement = document.getElementById('time');
+    const rulesButton = document.getElementById('rules-button');
+    const modal = document.getElementById('rules-modal');
+    const closeButton = document.querySelector('.close-button');
 
     let scoreX = 0;
     let scoreO = 0;
     let playerXName = 'X';
     let playerOName = 'O';
-    let roundsHistory = []; 
+    let roundsHistory = [];
+    let timer;
+    let timeLeft = 5;
+    let singlePlayerMode = false;
 
     cells.forEach(cell => {
         cell.addEventListener('click', () => handleCellClick(cell));
@@ -30,24 +37,49 @@ document.addEventListener('DOMContentLoaded', () => {
     startButton.addEventListener('click', () => {
         playerXName = playerXInput.value || 'X';
         playerOName = playerOInput.value || 'O';
+        singlePlayerMode = playerOInput.value.toLowerCase() === 'ai';
         resetScores();
         updateStatus();
+        startNewRound();
+    });
+
+    rulesButton.addEventListener('click', () => {
+        modal.style.display = 'block';
+    });
+
+    closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
     });
 
     function handleCellClick(cell) {
         if (cell.textContent === '') {
             cell.textContent = currentPlayer;
-            if (checkWin(currentPlayer)) {
+            const winningCells = checkWin(currentPlayer);
+            if (winningCells) {
                 alert(`${currentPlayer === 'X' ? playerXName : playerOName} wins!`);
                 updateScore(currentPlayer);
-                addRoundToHistory(currentPlayer === 'X' ? playerXName : playerOName, currentPlayer === 'X' ? playerOName : playerXName); 
+                addRoundToHistory(currentPlayer === 'X' ? playerXName : playerOName, currentPlayer === 'X' ? playerOName : playerXName);
+                highlightWinningCells(winningCells);
+                clearInterval(timer);
             } else if (isDraw()) {
                 alert('Draw!');
-                addRoundToHistory('Draw', ''); 
+                addRoundToHistory('Draw', '');
                 resetGame(true);
             } else {
                 currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
                 updateStatus();
+                if (singlePlayerMode && currentPlayer === 'O') {
+                    clearInterval(timer);
+                    setTimeout(aiMove, 500);
+                } else {
+                    startNewRound();
+                }
             }
         }
     }
@@ -64,11 +96,12 @@ document.addEventListener('DOMContentLoaded', () => {
             [3, 5, 7]
         ];
 
-        return winPatterns.some(pattern => {
-            return pattern.every(index => {
-                return document.getElementById(`cell-${index}`).textContent === player;
-            });
-        });
+        for (const pattern of winPatterns) {
+            if (pattern.every(index => document.getElementById(`cell-${index}`).textContent === player)) {
+                return pattern;
+            }
+        }
+        return null;
     }
 
     function isDraw() {
@@ -78,13 +111,18 @@ document.addEventListener('DOMContentLoaded', () => {
     function resetGame(autoReset = false) {
         cells.forEach(cell => {
             cell.textContent = '';
+            cell.classList.remove('win');
         });
         currentPlayer = 'X';
         updateStatus();
+        clearInterval(timer);
+        timeLeft = 5;
+        timerElement.textContent = timeLeft;
         if (autoReset) {
             playerXName = playerXInput.value || 'X';
             playerOName = playerOInput.value || 'O';
         }
+        startNewRound();
     }
 
     function resetScores() {
@@ -112,11 +150,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const result = loser ? `${winner} won against ${loser}` : 'Draw';
         roundsHistory.unshift(result);
         if (roundsHistory.length > 10) {
-            roundsHistory = []; 
+            roundsHistory = roundsHistory.slice(0, 10);
         }
         updateRoundsList();
     }
-    
+
     function updateRoundsList() {
         roundsList.innerHTML = '';
         roundsHistory.forEach(round => {
@@ -124,5 +162,39 @@ document.addEventListener('DOMContentLoaded', () => {
             li.textContent = round;
             roundsList.appendChild(li);
         });
+    }
+
+    function highlightWinningCells(pattern) {
+        pattern.forEach(index => {
+            document.getElementById(`cell-${index}`).classList.add('win');
+        });
+    }
+
+    function startNewRound() {
+        clearInterval(timer);
+        timeLeft = 5;
+        timerElement.textContent = timeLeft;
+        timer = setInterval(() => {
+            if (timeLeft > 0) {
+                timeLeft--;
+                timerElement.textContent = timeLeft;
+            } else {
+                clearInterval(timer);
+                alert('Time up! Switching player.');
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                updateStatus();
+                if (singlePlayerMode && currentPlayer === 'O') {
+                    setTimeout(aiMove, 500);
+                } else {
+                    startNewRound();
+                }
+            }
+        }, 1000);
+    }
+
+    function aiMove() {
+        const emptyCells = Array.from(cells).filter(cell => cell.textContent === '');
+        const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+        handleCellClick(randomCell);
     }
 });

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TIC-TAC-TOE</title>
+    <title>Tic-Tac-Toe</title>
+    <meta name="description" content="Play Tic-Tac-Toe online! A simple and fun game where you can play against friends or an AI. Enjoy the classic 3x3 grid game and see who can align three symbols first.">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -19,17 +20,35 @@
             <label for="player-o">Player O: </label>
             <input type="text" id="player-o" placeholder="Enter name for Player O">
             <button id="start-game">Start Game</button>
+            <button id="rules-button">Game Rules</button>
+        <div id="rules-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Game Rules</h2>
+                <p>Welcome to Tic-Tac-Toe!</p>
+                <p>The game is played on a 3x3 grid. Players take turns to place their symbol (X or O) in one of the empty cells. The first player to align three of their symbols horizontally, vertically, or diagonally wins the game. If all cells are filled without a winning combination, the game ends in a draw.</p>
+                <p>For single-player mode, enter "AI" as Player O's name. The AI will take turns automatically after you make your move.</p>
+                <p>Each player has 5 seconds to make a move. If the timer runs out, the turn will automatically switch to the other player.</p>
+            </div>
         </div>
+        </div>
+        
         <div class="game-board" role="grid" aria-label="Tic Tac Toe Board">
-            <div class="cell" id="cell-1" role="gridcell" tabindex="0"></div>
-            <div class="cell" id="cell-2" role="gridcell" tabindex="0"></div>
-            <div class="cell" id="cell-3" role="gridcell" tabindex="0"></div>
-            <div class="cell" id="cell-4" role="gridcell" tabindex="0"></div>
-            <div class="cell" id="cell-5" role="gridcell" tabindex="0"></div>
-            <div class="cell" id="cell-6" role="gridcell" tabindex="0"></div>
-            <div class="cell" id="cell-7" role="gridcell" tabindex="0"></div>
-            <div class="cell" id="cell-8" role="gridcell" tabindex="0"></div>
-            <div class="cell" id="cell-9" role="gridcell" tabindex="0"></div>
+            <div role="row">
+                <div class="cell" id="cell-1" role="gridcell" tabindex="0"></div>
+                <div class="cell" id="cell-2" role="gridcell" tabindex="0"></div>
+                <div class="cell" id="cell-3" role="gridcell" tabindex="0"></div>
+            </div>
+            <div role="row">
+                <div class="cell" id="cell-4" role="gridcell" tabindex="0"></div>
+                <div class="cell" id="cell-5" role="gridcell" tabindex="0"></div>
+                <div class="cell" id="cell-6" role="gridcell" tabindex="0"></div>
+            </div>
+            <div role="row">
+                <div class="cell" id="cell-7" role="gridcell" tabindex="0"></div>
+                <div class="cell" id="cell-8" role="gridcell" tabindex="0"></div>
+                <div class="cell" id="cell-9" role="gridcell" tabindex="0"></div>
+            </div>
         </div>
         <div class="status" aria-live="polite">
             Current Player: <span id="current-player">X</span>
