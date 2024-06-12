@@ -1,114 +1,201 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Tic-Tac-Toe Game
 
-Welcome USER_NAME,
+## Project Overview
+This Tic-Tac-Toe game allows users to play the classic game against another player or an AI. The game is designed to be accessible, user-friendly, and responsive, providing an engaging experience for all players.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Tic-Tac-Toe shown on different devices](<Docs/readme_images/Mockup.png>)
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 28, 2024**
+## You can reach the website link [here](https://vitore85.github.io/PP2/)
+---
+## CONTENTS
 
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**May 28 2024:** Fix Mongo and Links installs
-
-**April 26 2024:** Update node version to 16
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+- [Tic-Tac-Toe Game](#tic-tac-toe-game)
+  - [Project Overview](#project-overview)
+  - [You can reach the website link here](#you-can-reach-the-website-link-here)
+  - [CONTENTS](#contents)
+  - [User Experience (UX)](#user-experience-ux)
+    - [Key information for the site](#key-information-for-the-site)
+    - [User Stories](#user-stories)
+      - [Game Features](#game-features)
+      - [First Time Visitor Goals](#first-time-visitor-goals)
+      - [Returning Visitors Goals](#returning-visitors-goals)
+  - [Design](#design)
+    - [Color Scheme](#color-scheme)
+    - [Thoughts behind choosing this color scheme:](#thoughts-behind-choosing-this-color-scheme)
+    - [Fonts](#fonts)
+    - [Imagery](#imagery)
+    - [Wireframes](#wireframes)
+  - [Features](#features)
+    - [General features of the game](#general-features-of-the-game)
+    - [Favicon](#favicon)
+    - [Game Board](#game-board)
+    - [Player Input Section](#player-input-section)
+    - [Status, Timer and Scoreboard](#status-timer-and-scoreboard)
+    - [Reset Button](#reset-button)
+    - [Rounds History](#rounds-history)
+    - [Rules Modal and Game Rules button](#rules-modal-and-game-rules-button)
+    - [Future Implementations](#future-implementations)
+  - [Testing](#testing)
+    - [Validator Testing](#validator-testing)
+    - [Accessibility](#accessibility)
+    - [Languages Used](#languages-used)
+    - [Frameworks, Libraries \& Programs Used](#frameworks-libraries--programs-used)
+  - [Deployment \& Local Development](#deployment--local-development)
+    - [Deployment](#deployment)
+    - [Local Development](#local-development)
+      - [How to Fork](#how-to-fork)
+      - [How to Clone](#how-to-clone)
+    - [Code Used](#code-used)
+    - [Content](#content)
+    - [Thank you](#thank-you)
 
 ---
 
-Happy coding!
+## User Experience (UX)
+
+This Tic-Tac-Toe game is designed to provide a simple and enjoyable experience for users who want to play the game either against another player or an AI.
+
+### Key information for the site
+ - Play Tic-Tac-Toe against another player or an AI.
+ - View game status and scores.
+ - Access game rules and history of past rounds.
+
+### User Stories
+
+#### Game Features
+
+- Responsive design ensures the game is accessible and playable on any device.
+- Easy to understand game rules and controls.
+- Ability to track the scores and view the history of the last 10 rounds.
+
+#### First Time Visitor Goals
+
+- Understand how to play the game through clear instructions.
+- Start a new game easily.
+- Play against another player or an AI.
+
+#### Returning Visitors Goals
+
+- Check their past game history.
+- Play another round of Tic-Tac-Toe.
+- View updated scores and game status.
+
+## Design
+
+### Color Scheme
+
+![Color scheme](<Docs/readme_images/Colorscheme.png>)
+
+### Thoughts behind choosing this color scheme:
+The color scheme is chosen to be simple and appealing, using contrasting colors for clarity and ease of use. The background and game elements use colors that are easy on the eyes and make the game visually engaging.
+
+### Fonts
+Arial, Sans-Serif
+
+### Imagery
+
+Background image to enhance the visual appeal.
+
+![BG image index](<assets/images/background.png.png>)
+
+### Wireframes
+Wireframes were not used for this project.
+
+## Features
+
+### General features of the game
+
+The game includes a responsive design, a player input section, a game board, status and scoreboard, a reset button, rounds history, and a rules modal.
+
+### Favicon
+![Favicon](<Docs/readme_images/favicon.ico>)
+
+### Game Board
+![Gameboard](<Docs/readme_images/gameboard.png>)
+- The main area where the game is played.
+- 3x3 grid for Tic-Tac-Toe.
+
+### Player Input Section
+![Player Input](<Docs/readme_images/playerinput.png>)
+- Fields to input player names.
+- A button to start the game.
+
+### Status, Timer and Scoreboard
+![Status](<Docs/readme_images/StatusTimerScoreboard.png>)
+- Displays the current player's turn.
+- Current player timer is shown.
+- Shows the scores for both players.
+
+### Reset Button
+![Reset](<Docs/readme_images/Resetbutton.png>)
+- Resets the game to the initial state.
+
+### Rounds History
+![RoundHistory](<Docs/readme_images/History.png>)
+- Displays the history of the last 10 rounds played.
+
+### Rules Modal and Game Rules button
+![Button](<Docs/readme_images/Gamerulesbutton.png>)
+![Rules](<Docs/readme_images/gamerules.png>)
+- Provides the rules of the game in a pop-up modal.
+
+### Future Implementations
+- Implementing different difficulty levels for the AI.
+- Adding more visual effects and animations.
+- Expanding the game to include different grid sizes.
+
+## Testing
+
+### Validator Testing
+
+- HTML
+  - No errors were found when passing through the W3C validator.
+  ![HTML validation](<Docs/readme_images/HTMLvalidation.png>)
+- CSS
+  - No errors were found when passing through the Jigsaw validator.
+![CSS validation](<Docs/readme_images/CSSvalidation.png>)
+### Accessibility
+Desktop
+![Lighthouse desktop](<Docs/readme_images/Lighthousedesktop.png>)
+
+Mobile
+![Lighthouse mobile](<Docs/readme_images/Lighthousemobile.png>)
+- Semantic HTML for better screen reader compatibility.
+- Adequate contrast ratios for all text and background colors.
+- Large, clickable buttons for better user interaction on mobile devices.
+
+### Languages Used
+- HTML, CSS, and JavaScript were used to create this project.
+
+### Frameworks, Libraries & Programs Used
+- Git for version control.
+- GitHub for hosting the project.
+
+## Deployment & Local Development
+
+### Deployment
+The site is deployed using GitHub Pages - [Tic-Tac-Toe Game](https://your-github-username.github.io/tic-tac-toe/)
+
+### Local Development
+
+#### How to Fork
+1. Log in (or sign up) to GitHub.
+2. Go to the repository for this project, https://github.com/your-github-username/tic-tac-toe.
+3. Click the Fork button in the top right corner.
+
+#### How to Clone
+1. Log in (or sign up) to GitHub.
+2. Go to the repository for this project, https://github.com/your-github-username/tic-tac-toe.
+3. Click on the Code button, select whether you would like to clone with HTTPS, SSH, or GitHub CLI, and copy the link shown.
+4. Open the terminal in your code editor and change the current working directory to the location where you want the cloned directory.
+5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
+
+### Code Used
+- I used various online resources such as Love Math project, ChatGPT and GitHub, YouTube tutorials, and help from my spouse to complete this project.
+
+### Content
+- The content is written by me with some help from online resources for the rules and instructions.
+
+### Thank you
+- Thanks to my friends and family for their support and feedback, as always.
+- Thanks to the Swedish Slack community for the resources, tutorials and patience.
