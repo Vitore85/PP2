@@ -14,6 +14,7 @@
         <h1>Tic-Tac-Toe</h1>
     </header>
     <main>
+        <!--Player input section-->
         <div class="player-inputs">
             <label for="player-x">Player X: </label>
             <input type="text" id="player-x" placeholder="Enter name for Player X">
@@ -21,6 +22,7 @@
             <input type="text" id="player-o" placeholder="Enter name for Player O">
             <button id="start-game">Start Game</button>
             <button id="rules-button">Game Rules</button>
+        <!--Modal for games rules in a pop up when pushing button-->    
         <div id="rules-modal" class="modal">
             <div class="modal-content">
                 <span class="close-button">&times;</span>
@@ -32,7 +34,7 @@
             </div>
         </div>
         </div>
-        
+        <!--Setup for game board with 3x3 grid-->
         <div class="game-board" role="grid" aria-label="Tic Tac Toe Board">
             <div role="row">
                 <div class="cell" id="cell-1" role="gridcell" tabindex="0"></div>
@@ -53,6 +55,8 @@
         <div class="status" aria-live="polite">
             Current Player: <span id="current-player">X</span>
         </div>
+        <!--Timer for 5 seconds per player-->
+        <div id="timer">Timer: <span id="time">5</span> seconds</div>
         <div class="scoreboard">
             <span id="score-x">X: 0</span> | <span id="score-o">O: 0</span>
         </div>

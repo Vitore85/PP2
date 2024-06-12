@@ -32,8 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /* Restart the game when the reset button is clicked */
     resetButton.addEventListener('click', resetGame);
 
+    /* Start the game when the start button is clicked */
     startButton.addEventListener('click', () => {
         playerXName = playerXInput.value || 'X';
         playerOName = playerOInput.value || 'O';
@@ -43,10 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
         startNewRound();
     });
 
+    /* Show the rules when the rules button is clicked */
     rulesButton.addEventListener('click', () => {
         modal.style.display = 'block';
     });
 
+    /* Close the rules when the rules button is clicked */
     closeButton.addEventListener('click', () => {
         modal.style.display = 'none';
     });
@@ -57,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    /* What happens when you click on a box */
     function handleCellClick(cell) {
         if (cell.textContent === '') {
             cell.textContent = currentPlayer;
@@ -84,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+     /* Check if the current player has won */
     function checkWin(player) {
         const winPatterns = [
             [1, 2, 3],
@@ -104,10 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return null;
     }
 
+    /* Check if the game is a draw */
     function isDraw() {
         return Array.from(cells).every(cell => cell.textContent !== '');
     }
 
+    /* Restart the game board */
     function resetGame(autoReset = false) {
         cells.forEach(cell => {
             cell.textContent = '';
@@ -170,6 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* Start a new round and set the timer */
     function startNewRound() {
         clearInterval(timer);
         timeLeft = 5;
@@ -192,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
 
+    /* The computer makes a random move */
     function aiMove() {
         const emptyCells = Array.from(cells).filter(cell => cell.textContent === '');
         const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
