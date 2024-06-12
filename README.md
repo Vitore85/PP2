@@ -174,18 +174,18 @@ Mobile
 ## Deployment & Local Development
 
 ### Deployment
-The site is deployed using GitHub Pages - [Tic-Tac-Toe Game](https://your-github-username.github.io/tic-tac-toe/)
+The site is deployed using GitHub Pages - [Tic-Tac-Toe Game](https://vitore85.github.io/PP2/)
 
 ### Local Development
 
 #### How to Fork
 1. Log in (or sign up) to GitHub.
-2. Go to the repository for this project, https://github.com/your-github-username/tic-tac-toe.
+2. Go to the repository for this project, https://github.com/Vitore85/PP2.
 3. Click the Fork button in the top right corner.
 
 #### How to Clone
 1. Log in (or sign up) to GitHub.
-2. Go to the repository for this project, https://github.com/your-github-username/tic-tac-toe.
+2. Go to the repository for this project, https://github.com/Vitore85/PP2.
 3. Click on the Code button, select whether you would like to clone with HTTPS, SSH, or GitHub CLI, and copy the link shown.
 4. Open the terminal in your code editor and change the current working directory to the location where you want the cloned directory.
 5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
