@@ -96,7 +96,7 @@ Arial, Sans-Serif
 
 Background image to enhance the visual appeal.
 
-![BG image index](<assets/images/background.png.png>)
+![BG image index](<assets/images/background.png>)
 
 ### Wireframes
 Wireframes were not used for this project.
