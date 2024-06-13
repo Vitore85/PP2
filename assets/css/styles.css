@@ -6,7 +6,7 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background: url('/assets/images/background.png') no-repeat center bottom;
+    background: url('assets/images/background.png') no-repeat center bottom;
     background-size: cover;
     color: #fb7f3f;
 }
