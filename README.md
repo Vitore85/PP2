@@ -34,9 +34,12 @@ This Tic-Tac-Toe game allows users to play the classic game against another play
     - [Reset Button](#reset-button)
     - [Rounds History](#rounds-history)
     - [Rules Modal and Game Rules button](#rules-modal-and-game-rules-button)
+    - [404 page](#404-page)
     - [Future Implementations](#future-implementations)
   - [Testing](#testing)
+    - [Testing on different browsers](#testing-on-different-browsers)
     - [Validator Testing](#validator-testing)
+    - [JavaScript](#javascript)
     - [Accessibility](#accessibility)
     - [Languages Used](#languages-used)
     - [Frameworks, Libraries \& Programs Used](#frameworks-libraries--programs-used)
@@ -47,6 +50,7 @@ This Tic-Tac-Toe game allows users to play the classic game against another play
       - [How to Clone](#how-to-clone)
     - [Code Used](#code-used)
     - [Content](#content)
+    - [Images and Favicon](#images-and-favicon)
     - [Thank you](#thank-you)
 
 ---
@@ -139,12 +143,23 @@ The game includes a responsive design, a player input section, a game board, sta
 ![Rules](<Docs/readme_images/gamerules.png>)
 - Provides the rules of the game in a pop-up modal.
 
+### 404 page
+If the user types in the wrong adress the 404 page will be displayed to tell the user that the page doesn't exist.
+
 ### Future Implementations
 - Implementing different difficulty levels for the AI.
 - Adding more visual effects and animations.
 - Expanding the game to include different grid sizes.
 
 ## Testing
+
+### Testing on different browsers
+- The website is tested on different devices. The website is responsive on all tested devices. 
+- The website is tested on different browsers. The website is working on all tested browsers.
+- Tested browsers: 
+    - Google Chrome
+    - Safari
+    - Microsoft Edge
 
 ### Validator Testing
 
@@ -154,12 +169,16 @@ The game includes a responsive design, a player input section, a game board, sta
 - CSS
   - No errors were found when passing through the Jigsaw validator.
 ![CSS validation](<Docs/readme_images/CSSvalidation.png>)
+
+### JavaScript
+- Jshint: (https://jshint.com/)
+    - Jshint validator shows no errors in any Javascript file.
 ### Accessibility
 Desktop
-![Lighthouse desktop](<Docs/readme_images/Lighthousedesktop.png>)
+![Lighthouse desktop](<Docs/readme_images/lighthousedesktop.png>)
 
 Mobile
-![Lighthouse mobile](<Docs/readme_images/Lighthousemobile.png>)
+![Lighthouse mobile](<Docs/readme_images/lighthousemobile.png>)
 - Semantic HTML for better screen reader compatibility.
 - Adequate contrast ratios for all text and background colors.
 - Large, clickable buttons for better user interaction on mobile devices.
@@ -191,10 +210,14 @@ The site is deployed using GitHub Pages - [Tic-Tac-Toe Game](https://vitore85.gi
 5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
 
 ### Code Used
-- I used various online resources such as Love Math project, ChatGPT and GitHub, YouTube tutorials, and help from my spouse to complete this project.
+- I used various online resources such as Love Math project, ChatGPT, GitHub, YouTube tutorials, and help from my spouse to complete this project.
 
 ### Content
-- The content is written by me with some help from online resources for the rules and instructions.
+- The content is written by me with help from online resources for the rules and instructions.
+
+### Images and Favicon
+- Background image is created by my written prompt to DALL.E.
+- Favicon author : <a href="https://www.flaticon.com/free-icons/camping" title="camping icons">Camping icons created by Freepik - Flaticon</a>
 
 ### Thank you
 - Thanks to my friends and family for their support and feedback, as always.

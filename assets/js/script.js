@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 document.addEventListener('DOMContentLoaded', () => {
     let currentPlayer = 'X';
     const cells = document.querySelectorAll('.cell');
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'block';
     });
 
-    /* Close the rules when the rules button is clicked */
+    /* Close the rules when the close button is clicked */
     closeButton.addEventListener('click', () => {
         modal.style.display = 'none';
     });
@@ -103,7 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
 
         for (const pattern of winPatterns) {
-            if (pattern.every(index => document.getElementById(`cell-${index}`).textContent === player)) {
+            const currentPlayer = player; 
+            if (pattern.every(index => document.getElementById(`cell-${index}`).textContent === currentPlayer)) {
                 return pattern;
             }
         }
